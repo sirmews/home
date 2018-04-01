@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Intro = () => (
-    <div id="intro" className='center'>
-        <h1>Howdy, I go by Nav</h1>
-        <h2>I build things on the web</h2>
-    </div>
+    <section id="intro" className="pa4 ph5">
+        <h1 class="f2 f-subheadline-l lh-title">
+            Home of Nav, a full stack software developer with an entrepreneurial bent.
+        </h1>
+    </section>
 );
 
 export default Intro;
