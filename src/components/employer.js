@@ -10,7 +10,6 @@ class Employer extends Component {
                 <h4 className="ma0">{content.location}</h4>
                 <small className="date ttu">{content.startDate} - {content.endDate}</small>
                 <p>{content.description}</p>
-                <p><strong>Applied Tech/Skills</strong><br/>{content.toolchain}</p>
             </div>
         );
     }

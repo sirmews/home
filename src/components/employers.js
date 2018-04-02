@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as Contentful from 'contentful';
-import Employer from './Employer';
+import Employer from './employer';
 
 class Employers extends Component {
 
@@ -33,7 +33,9 @@ class Employers extends Component {
     /**
      * Fetch content from contentful
      */
-    fetchPosts = () => this.client.getEntries();
+    fetchPosts = () => this.client.getEntries({
+        "content_type": "employment"
+    });
 
     render = () => {
         let employers = this.state.employers.map(({fields}, key) => 
