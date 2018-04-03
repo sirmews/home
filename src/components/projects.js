@@ -10,11 +10,12 @@ class Projects extends Component {
          * Don't render unless we actually have something
          */
         if(!this.props.content) return null;
+
         let projects = this.props.content.map(({fields}, key) => 
             <div className="employer" key={key}>
                 <h3 className="bt ma0 pt3 dib">{fields.client} - {fields.job}</h3>
                 <p className="ma0"><a className="link color-inherit hover-near-black hover-bg-near-white" href={fields.link}>{fields.link}</a></p>
-                <p>{fields.description}</p>
+                {fields.description.split("\n").map((paragraph, key) => <p key={key}>{paragraph}</p>)}
             </div>
         );
         return (
