@@ -20,7 +20,8 @@ class Projects extends Component {
         );
         return (
             <section id="employers" className="pa4 ph5 lh-copy mw8">
-                <h2 className="f2 ma1">Work Experience</h2>
+                <h2 className="f2 ma0">Projects</h2>
+                <p className="mv2">All of those things done outside of nine-to-fives and in-between.</p>
                 {projects}
             </section>
         );
