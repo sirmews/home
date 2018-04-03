@@ -40,13 +40,15 @@ class Resume extends Component {
     /**
      * Fetch content from contentful
      */
-    fetchContent = () => this.client.getEntries();
+    fetchContent = () => this.client.getEntries({
+        order: 'sys.createdAt'
+    });
 
     render = () => (
-        <div className='resume'>
+        <div className='resume pv4'>
             <Employers content={this.state.employers}/>
 
-            <section id="" className="pa4 ph5 lh-copy mw8">
+            <section id="" className="pv4 lh-copy mw7">
                 <h2 className="f2 ma0">Education</h2>
                 <div className="education">
                     <h3 className="bt ma0 pt3 dib">Auckland University of Technology - Bachelors in Computer/Information Technology</h3>
