@@ -5,9 +5,10 @@ import Employers from './employers';
 import Projects from './projects';
 
 class Resume extends Component {
+
     client = Contentful.createClient({
-        space: '10mbfsw2t6th',
-        accessToken: '21390be764687f18d754b584f31fbe0303228ed04cea3dc5f5d643bb590963f0'
+        space: process.env.CONTENTFUL_SPACE,
+        accessToken: process.env.CONTENTFUL_TOKEN
     });
 
     constructor(props) {
