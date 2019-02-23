@@ -2,4 +2,4 @@
 
 #Personal Website
 
-It's built in React. It doesn't need to be but it is. It's a sandbox of experimentation.
+React+Contentful+Parcel for a real simple website.
