@@ -7,9 +7,10 @@ import Footer from './components/footer';
 
 import 'tachyons';
 
+import './style.scss'
+
 const App = () => (
-    <div className='App pv2 ph2 ph5-ns'>
-        <Header />
+    <div className='App pv2 ph5-l ph4-ns'>
         <Intro />
         <Resume />
         <Footer />
