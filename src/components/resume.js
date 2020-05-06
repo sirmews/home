@@ -8,6 +8,7 @@ class Resume extends Component {
 
     client = Contentful.createClient({
         space: process.env.CONTENTFUL_SPACE,
+        environment: 'master',
         accessToken: process.env.CONTENTFUL_TOKEN
     });
 
@@ -42,7 +43,7 @@ class Resume extends Component {
      * Fetch content from contentful
      */
     fetchContent = () => this.client.getEntries({
-        order: 'sys.createdAt'
+        order: '-sys.updatedAt'
     });
 
     render = () => (
