@@ -10,7 +10,7 @@ import 'tachyons';
 import './style.scss'
 
 const App = () => (
-    <div className='App pv2 ph5-l ph4-ns'>
+    <div className='App'>
         <Intro />
         <Resume />
         <Footer />

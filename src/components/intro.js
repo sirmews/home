@@ -1,19 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
 
-const introString = "Home of Nav. <br/>A perfectly cromulent full stack software developer eager to make.".split("").map(x => {return(<span>{x}</span>)})
+const introText = "Hi, I'm Nav.<br/>I'm a full stack web developer.<br/>"
 
 const renderString = (string) => (
-    string.split("").map(x => {return(<span>{x}</span>)})
+    string.split("<br/>").map((x, i) => {
+        return <p className="mb-4">{x.split("").map((x, i) => {
+            return (
+                <span key={i}>{x}</span>
+            )
+        })}</p>
+    })
 )
 
-const Intro = () => (
-    <section id="intro" className="pv4">
-        <h1 className="f-subheadline-l f1-ns fw9 lh-title animated-text">
-            <span className="mb3 db">{ renderString("I am Nav") } <span className="f2">( * ^ *) ノシ</span></span>
-            <span className="db">{ renderString("A perfectly cromulent full stack software developer.") }</span>
-        </h1>
-    </section>
-);
+const getThings = () => {
+    return links[Math.floor(Math.random() * links.length)];
+}
+
+const Intro = () => {
+    // const [things, setThings] = useState(getThings());
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setThings(getThings());
+    //     }, 5000);
+    // });
+
+    return (
+        <section id="intro" className="lg:w-2/3">
+            <div className="py-6 px-6 lg:px-12">
+                <div className="text-5xl animated-text font-black ">
+                    <p className="mb-4"><span className="f2">( * ^ *) <span className="wave">ノシ</span></span></p>
+                    { renderString(introText) }
+                </div>
+            </div>
+        </section>
+    )
+};
 
 export default Intro;

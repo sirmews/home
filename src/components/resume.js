@@ -47,10 +47,10 @@ class Resume extends Component {
     });
 
     render = () => (
-        <div className='resume pv4'>
+        <div className='resume lg:w-2/3 py-6 px-6 lg:px-12 '>
             <Employers content={this.state.employers}/>
 
-            <section id="" className="pv4 lh-copy mw7">
+            <section id="" className="lh-copy">
                 <h2 className="f2 ma0">Education</h2>
                 <div className="education">
                     <h3 className="bt ma0 pt3 dib">Auckland University of Technology - Bachelors in Computer/Information Technology</h3>

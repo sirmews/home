@@ -1,10 +1,11 @@
+
 .animated-text,
 .animated-text-hover:hover {
   /*
    * Animation variables
    */
   $animationSteps: 20;
-  $animationDuration: 50;
+  $animationDuration: 75;
   $animationElement: span;
   $animationElementsCount: 100;
   $delayBetweenLetters: 0.2;
@@ -31,6 +32,14 @@
     }
   }
 
+  @keyframes animated-bg-keys {
+    @for $i from 0 through $animationSteps {
+      #{percentage($i * (1 / $animationSteps))} {
+        border-color: hsla(random(365), 60, 60, 1);
+      }
+    }
+  }
+
   /*
    * Element animation delay loop
    */
@@ -41,4 +50,30 @@
       animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
     }
   }
+}
+
+.animated-text span.ignore {
+  animation-name: animated-bg-keys;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+span.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0.0deg) }
+  10% { transform: rotate(10.0deg) }
+  20% { transform: rotate(-5.0deg) }
+  30% { transform: rotate(10.0deg) }
+  40% { transform: rotate(0.0deg) }
+  50% { transform: rotate(0.0deg) }
+  100% { transform: rotate(0.0deg) }
 }
