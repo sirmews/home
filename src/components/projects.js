@@ -22,12 +22,10 @@ class Projects extends Component {
             </div>
         );
         return (
-            <section id="employers" className="pv4 lh-copy mw7">
+            <section id="employers" className="border-l-2 animated-border lh-copy mw7 pl-6">
                 <h2 className="f2 ma0">Projects</h2>
                 <p className="mv2">All of those things done outside of nine-to-fives and in-between.</p>
                 {projects}
-
-                <p className="bt ma0 pt3 dib">See my <a className="link near-black bg-near-white hover-bg-light-silver ph1 f4" href="https://github.com/raonav/">Github</a> for those small projects that didn't make the cut.</p>
             </section>
         );
     }

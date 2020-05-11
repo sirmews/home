@@ -23,7 +23,7 @@ class Employer extends Component {
         );
         return (
             <div className="employer mb-12">
-                <h3 className="ma0 pt3 dib">{content.employer} - {content.title}</h3>
+                <h3 className="dib">{content.employer} - {content.title}</h3>
                 <h4 className="ma0">{content.location}</h4>
                 <p className="mb-4"><small className="date ttu">{this.formatDate(content.startDate)} - {this.formatDate(content.endDate)}</small></p>
                 <p className="mb-4">{content.description}</p>
