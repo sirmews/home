@@ -18,6 +18,7 @@ class Projects extends Component {
                     <p className="ma0"><a className="link near-black bg-near-white hover-bg-light-silver ph1" href={fields.link}>{fields.link}</a></p>
                 ) : ''}
                 {fields.description.split("\n").map((paragraph, key) => <p key={key}>{paragraph}</p>)}
+            
             </div>
         );
         return (

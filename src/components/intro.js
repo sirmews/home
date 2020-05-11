@@ -5,34 +5,15 @@ const subText = "I sometimes run meetups, write code for money and attempt poetr
 
 const renderString = (string) => (
     string.split("<br/>").map((x, i) => {
-        return <p className="mb-2">{x.split("").map((x, i) => {
-            if(x === "X") return things
+        return <p className="mb-2" key={`paragraph_${i}`}>{x.split("").map((x, i) => {
             return (
-                <span key={i}>{x}</span>
+                <span key={`string_${i}`}>{x}</span>
             )
         })}</p>
     })
 )
 
-const links = [
-    {
-        "text": "clutter smothers, simplicity breathes",
-        "who": "terry guillemets"
-    }
-];
-
-const getThings = () => {
-    return links[Math.floor(Math.random() * links.length)];
-}
-
 const Intro = () => {
-    const [things, setThings] = useState(getThings());
-
-    useEffect(() => {
-        setTimeout(() => {
-            setThings(getThings());
-        }, 3000);
-    });
 
     return (
         <section id="intro" className="lg:w-2/3">

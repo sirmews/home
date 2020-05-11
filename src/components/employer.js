@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Pill from './pill';
 
 class Employer extends Component {
 
@@ -11,14 +12,24 @@ class Employer extends Component {
         return dateObject.toLocaleDateString("en-NZ", options);
     };
 
+    generateRandomColor = () => (
+        `pill-${Math.floor((Math.random() * 20) + 1)}`
+    )
+
     render = () => {
         let content = this.props.content;
+        let pills = content.toolchain.split(",").map(
+            (toolchain, key) => {console.log(typeof toolchain); return <Pill key={`toolchain_${key}`} toolchain={toolchain} pillcolor={this.generateRandomColor()} />}
+        );
         return (
-            <div className="employer">
-                <h3 className="bt ma0 pt3 dib">{content.employer} - {content.title}</h3>
+            <div className="employer mb-12">
+                <h3 className="ma0 pt3 dib">{content.employer} - {content.title}</h3>
                 <h4 className="ma0">{content.location}</h4>
-                <small className="date ttu">{this.formatDate(content.startDate)} - {this.formatDate(content.endDate)}</small>
-                <p>{content.description}</p>
+                <p className="mb-4"><small className="date ttu">{this.formatDate(content.startDate)} - {this.formatDate(content.endDate)}</small></p>
+                <p className="mb-4">{content.description}</p>
+                <div className="mb-4">
+                    {pills}
+                </div>
             </div>
         );
     };

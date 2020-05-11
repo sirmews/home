@@ -52,14 +52,6 @@
   }
 }
 
-.animated-text span.ignore {
-  animation-name: animated-bg-keys;
-  animation-duration: 50s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-}
-
 span.wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -76,4 +68,20 @@ span.wave {
   40% { transform: rotate(0.0deg) }
   50% { transform: rotate(0.0deg) }
   100% { transform: rotate(0.0deg) }
+}
+
+@for $i from 0 through 20 {
+  $color: random(365);
+  .pill-#{$i} {
+    background-color: hsla($color, 60, 60, 0.7);
+    border-color: hsla($color, 60, 60, 0.3);
+  }
+}
+
+.animated-border {
+  animation-name: animated-bg-keys;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
