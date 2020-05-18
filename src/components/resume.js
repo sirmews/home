@@ -21,35 +21,35 @@ class Resume extends Component {
     }
 
     componentDidMount = () => {
-        this.fetchContent().then(this.setContent);
+        this.fetchContent({
+            "content_type": "employment"
+        }).then(this.setContent.bind(null, 'employment'));
+        this.fetchContent({
+            "content_type": "projects"
+        }).then(this.setContent.bind(null, 'projects'));
     }
 
     /**
      * Add contentful content to the state
      */
-    setContent = response => {
-        let employers = response.items.filter((entity) => 
-            entity.sys.contentType.sys.id == "employment"
-        );
-        let projects = response.items.filter((entity) => 
-            entity.sys.contentType.sys.id == "projects"
-        );
+    setContent = (type, response) => {
         this.setState({
-            employers: employers,
-            projects: projects
+            [type]: response.items
         })
+        console.log(this.state)
     }
 
     /**
      * Fetch content from contentful
      */
-    fetchContent = () => this.client.getEntries({
-        order: '-sys.updatedAt'
+    fetchContent = ({content_type}) => this.client.getEntries({
+        content_type: content_type,
+        order: '-fields.endDate'
     });
 
     render = () => (
         <div className='resume lg:w-2/3 py-6 px-6 lg:px-12 '>
-            <Employers content={this.state.employers}/>
+            <Employers content={this.state.employment}/>
 
             <Education />
 
