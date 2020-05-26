@@ -36,7 +36,6 @@ class Resume extends Component {
         this.setState({
             [type]: response.items
         })
-        console.log(this.state)
     }
 
     /**

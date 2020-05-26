@@ -19,7 +19,7 @@ class Employer extends Component {
     render = () => {
         let content = this.props.content;
         let pills = content.toolchain.split(",").map(
-            (toolchain, key) => {console.log(typeof toolchain); return <Pill key={`toolchain_${key}`} toolchain={toolchain} pillcolor={this.generateRandomColor()} />}
+            (toolchain, key) => {return <Pill key={`toolchain_${key}`} toolchain={toolchain} pillcolor={this.generateRandomColor()} />}
         );
         return (
             <div className="employer mb-12">

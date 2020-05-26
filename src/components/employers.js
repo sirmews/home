@@ -14,9 +14,11 @@ class Employers extends Component {
         );
         return (
             <section id="employers" className="border-l-2 animated-border lh-copy mw7 pl-6">
-                <h2 className="f2">Work Experience</h2>
-                <p className="mb-12">The nine-to-fives that often ended after five.</p>
-                {employers}
+                <h2 className="text-3xl">Work Experience</h2>
+                <p className="mb-4">The nine-to-fives that often ended after five.</p>
+                <div className="mt-12">
+                    {employers}
+                </div>
             </section>
         );
     }

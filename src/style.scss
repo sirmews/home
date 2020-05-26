@@ -1,14 +1,40 @@
 
+.App {
+  transition: background-color 1.3s ease;
+}
+
+/*
+* Animation variables
+*/
+$animationSteps: 20;
+$animationDuration: 100;
+$animationElement: span;
+$animationElementsCount: 100;
+$delayBetweenLetters: 0.2;
+
+.App.mode-light {
+  .animated-text,
+  .animated-text-hover:hover {
+    #{$animationElement} {
+      animation-name: animated-text-keys-light;
+      animation-duration: #{$animationDuration}s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .animated-border {
+    animation-name: animated-bg-keys-light;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+}
+
 .animated-text,
 .animated-text-hover:hover {
-  /*
-   * Animation variables
-   */
-  $animationSteps: 20;
-  $animationDuration: 100;
-  $animationElement: span;
-  $animationElementsCount: 100;
-  $delayBetweenLetters: 0.2;
 
   /*
    * Elements settings
@@ -32,10 +58,26 @@
     }
   }
 
+  @keyframes animated-text-keys-light {
+    @for $i from 0 through $animationSteps {
+      #{percentage($i * (1 / $animationSteps))} {
+        color: hsla(random(365), 20, 10, 1);
+      }
+    }
+  }
+
   @keyframes animated-bg-keys {
     @for $i from 0 through $animationSteps {
       #{percentage($i * (1 / $animationSteps))} {
         border-color: hsla(random(365), 60, 60, 1);
+      }
+    }
+  }
+
+  @keyframes animated-bg-keys-light {
+    @for $i from 0 through $animationSteps {
+      #{percentage($i * (1 / $animationSteps))} {
+        border-color: hsla(random(365), 20, 10, 1);
       }
     }
   }
