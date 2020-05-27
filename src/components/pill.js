@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import ThemeContext from '../ThemeContext';
+import ThemeContext from '../themeContext';
 
 const Pill = (props) => {
   const darkmode = React.useContext(ThemeContext);
