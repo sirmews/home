@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "./node_modules/parcel-bundler/bin/cli.js src/index.html",
-    "build": "./node_modules/parcel-bundler/bin/cli.js build src/index.html"
+    "build": "./node_modules/parcel-bundler/bin/cli.js build --no-source-maps src/index.html"
   },
   "dependencies": {
     "contentful": "^5.1.3",
