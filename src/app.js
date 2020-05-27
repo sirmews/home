@@ -4,7 +4,7 @@ import Intro from './components/intro';
 import Header from './components/header';
 import Resume from './components/resume';
 import Footer from './components/footer';
-import ThemeContext from './ThemeContext';
+import ThemeContext from './themeContext';
 
 import 'tachyons';
 
