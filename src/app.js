@@ -11,7 +11,7 @@ import 'tachyons';
 import './style.scss'
 
 const App = () => {
-    const [isDarkMode, setIsDarkMode] = useState(() => false);
+    const [isDarkMode, setIsDarkMode] = useState(() => true);
 
     return (
         <ThemeContext.Provider value={isDarkMode}>
