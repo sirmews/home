@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import * as Contentful from 'contentful';
 import Employers from './employers';
 import Projects from './projects';
 import Education from './education';
 
-class Resume extends Component {
+const client = Contentful.createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE,
+    environment: 'master',
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN
+});
 
-    client = Contentful.createClient({
-        space: process.env.CONTENTFUL_SPACE,
-        environment: 'master',
-        accessToken: process.env.CONTENTFUL_TOKEN
-    });
+class Resume extends Component {
 
     constructor(props) {
         super(props);
@@ -41,7 +40,7 @@ class Resume extends Component {
     /**
      * Fetch content from contentful
      */
-    fetchContent = ({content_type}) => this.client.getEntries({
+    fetchContent = ({content_type}) => client.getEntries({
         content_type: content_type,
         order: '-fields.endDate'
     });

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.App {
+  transition: background-color 1.3s ease;
+}
+
+.animated-text,
+.animated-text-hover:hover {
+  span {
+    animation-name: animated-text-keys;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes animated-text-keys {
+  0% {
+      color: #5c6ad6
+  }
+
+  5% {
+      color: #5cbcd6
+  }
+
+  10% {
+      color: #5cd668
+  }
+
+  15% {
+      color: #d65c89
+  }
+
+  20% {
+      color: #5cd662
+  }
+
+  25% {
+      color: #5cd6c2
+  }
+
+  30% {
+      color: #855cd6
+  }
+
+  35% {
+      color: #8bd65c
+  }
+
+  40% {
+      color: #5c9fd6
+  }
+
+  45% {
+      color: #5cc8d6
+  }
+
+  50% {
+      color: #5cd4d6
+  }
+
+  55% {
+      color: #d67e5c
+  }
+
+  60% {
+      color: #5cd68b
+  }
+
+  65% {
+      color: #5cd660
+  }
+
+  70% {
+      color: #5cd6b4
+  }
+
+  75% {
+      color: #5cd693
+  }
+
+  80% {
+      color: #60d65c
+  }
+
+  85% {
+      color: #d65cc8
+  }
+
+  90% {
+      color: #d6915c
+  }
+
+  95% {
+      color: #5cd681
+  }
+
+  to {
+      color: #d6605c
+  }
+}

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import * as Contentful from 'contentful';
-import Employer from './employer';
 
 class Projects extends Component {
 

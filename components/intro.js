@@ -4,11 +4,16 @@ import DarkModeToggle from "react-dark-mode-toggle";
 const introText = "Home of Nav.<br/>A perfectly cromulent full stack developer."
 const subText = "I sometimes run meetups, write code for money and attempt poetry."
 
+const randomAnimationDelay = (i, length) => {
+    let random = ((i * 0.2) - (length * 0.2));
+    return {animationDelay: '-' + random + 's'}
+}
+
 const renderString = (string) => (
     string.split("<br/>").map((x, i) => {
         return <p className="mb-2" key={`paragraph_${i}`}>{x.split("").map((x, i) => {
             return (
-                <span key={`string_${i}`}>{x}</span>
+                <span key={`string_${i}`} style={randomAnimationDelay(i, string.split("<br/>").length)}>{x}</span>
             )
         })}</p>
     })
