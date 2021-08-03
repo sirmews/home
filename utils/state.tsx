@@ -1,9 +1,9 @@
 import { useState, useContext, createContext } from 'react'
 
-const AppContext = createContext();
+const AppContext = createContext({});
 
 // Wrap our context object around any components that need it
-const ContextWrapper = ({children}) => {
+const ContextWrapper = ({children}: any) => {
   // this is shared amongst all components
 
   const [darkMode, setDarkMode] = useState(true);

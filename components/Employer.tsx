@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Pill from './pill';
+import Pill from './Pill';
 
 class Employer extends Component {
 
     formatDate = (date) => {
         let dateObject = new Date(date);
-        let options = { 
+        let options = {
             year: 'numeric', month: 'long'
         };
         return dateObject.toLocaleDateString("en-NZ", options);
