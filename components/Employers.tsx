@@ -1,14 +1,20 @@
+import Heading from './Heading';
 import Employer from './Employer';
 import RainbowText from './RainbowText';
 
-const Employers = ({employers}: any) => {
+const Employers = ({ employers }: any) => {
     return (
-        <section id="employers" className="w-1/2">
-            <div className="text-2xl font-bold">
+        <div>
+            <Heading>
               <RainbowText text="Work Experience"/>
-            </div>
+            </Heading>
             <p>The nine-to-fives that often ended after five.</p>
-        </section>
+            {
+              employers.map((employer: any, key: number) => (
+                <Employer key={key} employer={employer} />
+              ))
+            }
+        </div>
     )
 }
 

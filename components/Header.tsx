@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header id="header" className="">
             <div className="container m-auto">
-                <div className="flex justify-between py-6 mb-4">
+                <div className="flex justify-between py-6">
                     <div className="">
                         <div className="">
                             <div className="text-4xl animated-text font-extrabold">

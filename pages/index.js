@@ -3,11 +3,15 @@ import client from '../utils/contentful';
 import Projects from '../components/Projects';
 import Employers from '../components/Employers';
 
-export default function Home({projects, employers}) {
+export default function Home({ projects, employers }) {
   return (
     <div className="container m-auto">
-      <Employers employers={employers}/>
-      <Projects projects={projects}/>
+      <section className="w-full sm:w-2/3 md:w-1/2">
+        <Employers employers={employers}/>
+      </section>
+      <section className="w-full sm:w-2/3 md:w-1/2">
+        <Projects projects={projects}/>
+      </section>
     </div>
   )
 }
@@ -46,7 +50,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects: projectsCollection.items,
-      employment: employmentCollection.items
+      employers: employmentCollection.items
     }
   }
 

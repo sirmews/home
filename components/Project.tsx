@@ -1,7 +1,7 @@
 import Paragraph from './Paragraph';
 import Link from './Link';
 
-const Project = ({project}: any) => (
+const Project = ({ project }: any) => (
   <div className="employer">
     <h3 className="">{project.client} - {project.job}</h3>
     { project.link ? (
