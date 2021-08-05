@@ -1,10 +1,7 @@
-import DarkModeToggle from "react-dark-mode-toggle";
-import { useAppContext } from '../utils/state';
 import content from '../content';
 import RainbowText from './RainbowText';
 
 const Header = () => {
-    const { darkMode, setDarkMode } = useAppContext();
 
     return (
         <header id="header" className="">
@@ -20,14 +17,6 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="px-6">
-                        <DarkModeToggle
-                            onChange={(e) => setDarkMode(e)}
-                            checked={darkMode}
-                            size={50}
-                            speed={1.3}
-                        />
                     </div>
                 </div>
             </div>
