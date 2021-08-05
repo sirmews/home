@@ -9,7 +9,7 @@ const Pills = ({ pills }: any) => (
   <div className="space-x-2 space-y-2">
     {
       pills.split(',').map((pill: any, key: number) => (
-        <Pill key={`${key}`} pill={pill} style={randomAnimationDelay(key, pills.split(',').length)} />
+        <Pill key={`${key}`} pill={pill} />
       ))
     }
   </div>
