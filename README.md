@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/42eccb33-2088-40d9-8196-1719f6d9f62e/deploy-status)](https://app.netlify.com/sites/perfectlycromulent/deploys)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 # Personal Website
 
