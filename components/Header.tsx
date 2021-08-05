@@ -9,9 +9,11 @@ const Header = () => {
                 <div className="flex justify-between py-6">
                     <div className="">
                         <div className="">
-                            <div className="text-4xl animated-text font-extrabold">
+                            <div className="text-3xl animated-text font-bold">
+                              <div className="inline-flex space-x-4">
+                                <RainbowText text={content.title} className="m-0"/>
                                 <p className="mb-4"><span className="text-xl">( * ^ *) <span className="wave">ノシ</span></span></p>
-                                <RainbowText text={content.title} />
+                              </div>
                                 <div className="text-xl py-2">
                                     <RainbowText text={content.tagline} />
                                 </div>

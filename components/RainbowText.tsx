@@ -3,11 +3,11 @@ const randomAnimationDelay = (index: number, length: number) => {
   return { animationDelay: '-' + random + 's' }
 }
 
-const RainbowText = ({text}: any) => (
+const RainbowText = ({text, className}: any) => (
   <>
     {
       text.split("<br/>").map((string: any, key: number) => (
-        <p className="animated-text" key={`${key}`}>
+        <p className={`animated-text ${className ? className : ''}`} key={`${key}`}>
           {
             string.split('').map((string: any, key: number) => (
               <span key={`${key}`} style={randomAnimationDelay(key, text.split("<br/>").length)}>{string}</span>

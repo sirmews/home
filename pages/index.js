@@ -19,7 +19,7 @@ export default function Home({ projects, employers }) {
 export async function getStaticProps() {
   const response = await client(`
     {
-      employmentCollection {
+      employmentCollection (order: [startDate_DESC]) {
         items {
             employer
             title
