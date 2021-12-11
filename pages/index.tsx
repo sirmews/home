@@ -3,12 +3,9 @@ import client from '../utils/contentful';
 import Projects from '../components/Projects';
 import Employers from '../components/Employers';
 
-export default function Home({ projects, employers }) {
+export default function Home({ projects, employers }: any) {
   return (
     <div className="container m-auto">
-      <section className="w-full sm:w-2/3 md:w-1/2">
-        <Employers employers={employers}/>
-      </section>
       <section className="w-full sm:w-2/3 md:w-1/2">
         <Projects projects={projects}/>
       </section>
@@ -19,17 +16,6 @@ export default function Home({ projects, employers }) {
 export async function getStaticProps() {
   const response = await client(`
     {
-      employmentCollection (order: [startDate_DESC]) {
-        items {
-            employer
-            title
-            location
-            startDate
-            endDate
-            description
-            toolchain
-        }
-      }
       projectsCollection {
         items {
             client
@@ -40,6 +26,12 @@ export async function getStaticProps() {
             endDate
             startDate
         }
+      }
+      postsCollection {
+          items {
+              title
+              content
+          }
       }
     }`
   );

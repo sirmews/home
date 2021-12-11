@@ -1,5 +1,5 @@
 const content = {
-  'title': 'Home of Nav',
+  'title': 'I am Nav',
   'tagline': 'A perfectly cromulent full stack developer.',
 }
 

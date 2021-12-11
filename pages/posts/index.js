@@ -1,42 +1,48 @@
-import { getAllPosts } from '../../utils/api';
-import markdownToHtml from '../../utils/markdownToHtml';
-import { useAppContext } from '../../utils/state';
+import client from '../../utils/contentful';
+import Posts from '../../components/Posts';
 
-export default function Posts({ allPosts }) {
-  
-
+export default function PostsIndex({ posts }) {
   return (
-    <>
-      <div className='resume lg:w-2/3 py-6 px-6 lg:px-12 '>
-        {
-        allPosts && allPosts.map((post, index) => (
-          <div key={index}>
-            <section id="employers" className="lh-copy mw7 pl-6">
-                <h2 className="text-3xl">Work Experience</h2>
-                <p className="mb-4">The nine-to-fives that often ended after five.</p>
-                <div className="mt-12">
-                    {post.title}
-                </div>
-            </section>
-          </div>
-        ))
-        }
-      </div>
-    </>
+    <div className="container m-auto">
+      <article className="w-full sm:w-2/3 md:w-1/2">
+        <Posts posts={posts} />
+      </article>
+    </div>
   )
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+  const response = await client(`
+    {
+      postsCollection (order: [sys_id_DESC]) {
+        items {
+            sys {
+              id
+            }
+            title
+            content {
+                json
+                links {
+                  entries {
+                    inline {
+                      sys {
+                        id
+                      }
+                    }
+                  }
+                }
+            }
+        }
+      }
+    }`
+  );
+
+  const { postsCollection } = response;
 
   return {
-    props: { allPosts },
+    props: {
+      posts: postsCollection.items,
+    }
   }
+
 }

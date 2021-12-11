@@ -6,10 +6,10 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     container: (theme) => ({
-      padding: {
-        DEFAULT: theme('spacing.4'),
-        sm: theme('spacing.0'),
-      }
+        padding: {
+            DEFAULT: theme('spacing.4'),
+            sm: theme('spacing.0'),
+        }
     }),
     extend: {},
   },
